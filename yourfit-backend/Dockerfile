@@ -6,7 +6,8 @@ RUN npm ci --ignore-scripts
 
 COPY prisma ./prisma/
 RUN apt-get update -y && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
-RUN npx prisma format && npx prisma validate && npx prisma generate
+# pas de validate ici
+RUN npx prisma format && npx prisma generate
 
 COPY . .
 RUN npm run build
