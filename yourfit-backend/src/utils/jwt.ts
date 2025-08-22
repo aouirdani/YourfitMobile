@@ -4,7 +4,7 @@ import { ENV } from '../env';
 const SECRET = ENV.JWT_SECRET as string;
 
 export const signToken = (payload: object, expiresIn: string | number = '1h'): string => {
-  const options: SignOptions = { expiresIn };
+  const options: SignOptions = { expiresIn: expiresIn as any }; // cast any pour TypeScript
   return jwt.sign(payload, SECRET, options);
 };
 
