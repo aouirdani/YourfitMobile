@@ -4,8 +4,8 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("DATABASE_URL")   // pooler (runtime)
-  directUrl = env("DIRECT_URL")     // direct (migrations)
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -20,7 +20,6 @@ model User {
 model Profile {
   id       String  @id @default(cuid())
   userId   String  @unique
-  user     User    @relation(fields: [userId], references: [id])
   gender   String?
   heightCm Int?
   weightKg Float?
@@ -28,4 +27,5 @@ model Profile {
   goal     String?
   dietPref String?
   injuries String?
+  user     User    @relation(fields: [userId], references: [id])
 }
