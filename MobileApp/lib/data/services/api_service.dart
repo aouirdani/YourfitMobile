@@ -5,7 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class ApiService {
   static const String _baseUrl =
-      'https://yourfitsaas-production.up.railway.app'; // <- OK
+      'https://yourfitmobile-production.up.railway.app'; // <- OK
 
   static const storage = FlutterSecureStorage();
   final Dio _dio;

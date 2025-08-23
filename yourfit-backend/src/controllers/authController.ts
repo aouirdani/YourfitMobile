@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import * as authService from '../services/authService';
-import { prisma } from '../prisma/prisma'; // ou ton ORM / service de DB
-
+import { prisma } from '../prisma';
 
 export const signup = async (req: Request, res: Response) => {
   try {
